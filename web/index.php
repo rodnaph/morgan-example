@@ -13,7 +13,8 @@ $layout = T::template(
     function($data) {
         return array(
             'title' => T::append(' - ' . $data['title']),
-            'h1' => T::content($data['title'])
+            'h1' => T::content($data['title']),
+            '.content' => T::htmlContent($data['content'])
         );
     }
 );
@@ -36,12 +37,12 @@ $thingSummary = T::snippet(
 // chrome of the page, then replaces the main section with a snippet
 // extracted from another HTML file.
 
-$listPage = T::template(
-    '../views/layout.html',
-    function($things, $data) use ($thingSummary) {
+$listPage = T::snippet(
+    '../views/list.html',
+    '.content',
+    function($things) use ($thingSummary) {
         return array(
-            'h1' => T::content($data['title']),
-            '.content' => T::mapSnippet($thingSummary, $things)
+            '.things' => T::mapSnippet($thingSummary, $things)
         );
     }
 );
@@ -50,7 +51,7 @@ $listPage = T::template(
 
 $app = new Application();
 
-$app->get('/list', function() use ($listPage, $things) {
+$app->get('/list', function() use ($layout, $listPage) {
 
     // This is a list of some data, for simplicity sake it's just hard-coded
     // arrays, but it could equally be models we've just extracted from the
@@ -67,10 +68,10 @@ $app->get('/list', function() use ($listPage, $things) {
         )
     );
 
-    return $listPage(
-        $things,
+    return $layout(
         array(
-            'title' => 'List of Stuff'
+            'title' => 'List of Stuff',
+            'content' => $listPage($things)
         )
     );
 
