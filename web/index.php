@@ -42,7 +42,7 @@ $listPage = T::snippet(
     '.content',
     function($things) use ($thingSummary) {
         return array(
-            '.things' => T::mapSnippet($thingSummary, $things)
+            '.things' => T::map($thingSummary, $things)
         );
     }
 );
