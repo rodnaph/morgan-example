@@ -1,0 +1,7 @@
+{
+    "require": {
+        "rodnaph/morgan": "dev-master",
+        "silex/silex": "dev-master"
+    },
+    "minimum-stability": "dev"
+}
