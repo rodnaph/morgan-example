@@ -20,3 +20,7 @@ Then copy the _web/.htaccess-sample_ file to _web/.htaccess_, change the
 _RewriteBase_ to the URL root the site will be served from, and then open
 it in your browser.
 
+# Warning!
+
+This project is an ideas-in-progress toy, so will be prone to breakage.  Only
+for the curious ;)
