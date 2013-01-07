@@ -10,11 +10,11 @@ use Silex\Application;
 
 $layout = T::template(
     '../views/layout.html',
-    function($data) {
+    function($title, $html = null) {
         return array(
-            'title' => T::append(' - ' . $data['title']),
-            'h1' => T::content($data['title']),
-            '.content' => T::htmlContent($data['content'])
+            'title' => T::append(' - ' . $title),
+            'h1' => T::content($title),
+            '.content' => T::htmlContent($html)
         );
     }
 );
@@ -68,22 +68,13 @@ $app->get('/list', function() use ($layout, $listPage) {
         )
     );
 
-    return $layout(
-        array(
-            'title' => 'List of Stuff',
-            'content' => $listPage($things)
-        )
-    );
+    return $layout('List of Stuff', $listPage($things));
 
 });
 
 $app->get('/', function() use ($layout) {
 
-    return $layout(
-        array(
-            'title' => 'Home Page'
-        )
-    );
+    return $layout('Home Page');
 
 });
 
