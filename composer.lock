@@ -54,19 +54,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/rodnaph/morgan.git",
-                "reference": "ad37375f80a3ee042ea99c6ec0e3de696c898dfb"
+                "reference": "236c848b7861545ed200e7e6fc07904bf35ad27e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/rodnaph/morgan/archive/ad37375f80a3ee042ea99c6ec0e3de696c898dfb.zip",
-                "reference": "ad37375f80a3ee042ea99c6ec0e3de696c898dfb",
+                "url": "https://github.com/rodnaph/morgan/archive/236c848b7861545ed200e7e6fc07904bf35ad27e.zip",
+                "reference": "236c848b7861545ed200e7e6fc07904bf35ad27e",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.0",
                 "symfony/css-selector": "dev-master"
             },
-            "time": "2013-01-07 20:13:43",
+            "time": "2013-01-07 21:19:13",
             "type": "library",
             "installation-source": "source",
             "autoload": {
